@@ -1,0 +1,37 @@
+body{
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  padding: 2rem 0;
+}
+
+body::before, body::after{
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  background-color: purple;
+  z-index: -1;
+}
+
+body::before{
+  left:0;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+body::after{
+  right:0;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+h1, p{
+  font-family: "Bitcount Prop Single", sans-serif;
+}
+
+@media (max-width: 600px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
